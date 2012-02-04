@@ -1,6 +1,6 @@
-function expression(polyval,html_replace){
+function expression(polyval){
 
-	this.express = function(){
+	this.express = function(html_replace){
 		var i=0; var st = ""; var pow = 0;
 		for(i=0; i< polyval.length; i++){
 			if(polyval[i]!= 0){
@@ -18,7 +18,6 @@ function expression(polyval,html_replace){
 				st = st + sign + val+ pow;
 			}
 		}
-		//document.write(st);
 		document.getElementById(html_replace).innerHTML = st;
 	}
 

@@ -9,6 +9,8 @@
 
 <body>
 OK, let's try this...<br>
+
+
 <div>
 <button onclick="gen()">Generate!</button>
 <div id="formula"></div>
@@ -16,11 +18,12 @@ OK, let's try this...<br>
 <script type="text/javascript">
 function gen(){
 p = create_polyval(3,1,-3);
-ex = new expression(p,"formula");
-ex.express();
+ex = new expression(p);
+ex.express("formula");
 }
 
 </script>
+
 </body>
 
 </html>
