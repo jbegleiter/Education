@@ -1,4 +1,4 @@
-function expression(polyval){
+function expression(polyval,html_replace){
 
 	this.express = function(){
 		var i=0; var st = ""; var pow = 0;
@@ -18,7 +18,8 @@ function expression(polyval){
 				st = st + sign + val+ pow;
 			}
 		}
-		document.write(st);
+		//document.write(st);
+		document.getElementById(html_replace).innerHTML = st;
 	}
 
 }
