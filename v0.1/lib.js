@@ -1,6 +1,6 @@
-function expression(polyval){
+function expression(){
 
-	this.express = function(html_replace){
+	this.express = function(html_replace,polyval){
 		var i=0; var st = ""; var pow = 0;
 		for(i=0; i< polyval.length; i++){
 			if(polyval[i]!= 0){
@@ -25,12 +25,14 @@ function expression(polyval){
 		for(i=0;i<dim;i++){
 			a[i] = Math.floor(Math.random()*11);
 		}
-		document.getElementById(html_replace).innerHTML = a[0];
+		//document.getElementById(html_replace).innerHTML = a[0];
+		return a;
 	}
 }
 function gen(){
-p = new Array(3,-1,3);
-ex = new expression(p);
-ex.express("formula");
-ex.generate(4,"response");
+//p = new Array(3,-1,3);
+ex = new expression();
+arr = ex.generate(4,"response");
+ex.express("formula", arr);
+
 }
