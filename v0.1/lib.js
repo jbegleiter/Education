@@ -19,13 +19,18 @@ function expression(polyval){
 			}
 		}
 		document.getElementById(html_replace).innerHTML = st;
+	}	
+	this.generate = function(dim, html_replace){
+		a = new Array();
+		for(i=0;i<dim;i++){
+			a[i] = Math.floor(Math.random()*11);
+		}
+		document.getElementById(html_replace).innerHTML = a[0];
 	}
-
 }
-function create_polyval(x0,x1,x2){
-	var poly = new Array();
-	poly[0] = x0;
-	poly[1] = x1;
-	poly[2] = x2;
-	return poly;
+function gen(){
+p = new Array(3,-1,3);
+ex = new expression(p);
+ex.express("formula");
+ex.generate(4,"response");
 }
