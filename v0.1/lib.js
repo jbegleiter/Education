@@ -29,21 +29,26 @@ function expression(){
 	}
 	//this.opp = Math.floor(Math.random()*40);
 	this.solution = function(coef,opp,html_replace){
+		document.getElementById("response").innerHTML = coef.length;
 		//used for quadratic for now
-		if(coef.length == 3){
-			sol = new Array();
-			var a = coef[0]; var b = coef[1]; var c = coef[2]; 
-			sol[0] = (b*-1)+Math.sqrt((Math.pow(b,2) - (4*a*c))/(2*a));
-			//document.getElementById(html_replace).innerHTML = sol[0];
-			//document.write(sol[0]);
-		}
-		return sol;
+		 if(coef.length == 3){
+		 	sol = new Array();
+			var a = Number(coef[0]); 
+			var b = coef[1]; 
+			var c = coef[2]; 
+			sol[0] -1*a;
+			document.getElementById(html_replace).innerHTML =  -1*a;
+		// 	//sol[0] = (b*-1)+Math.sqrt((Math.pow(b,2) - (4*a*c))/(2*a));
+		// 	document.getElementById(html_replace).innerHTML = a;
+		// 	//document.write(sol[0]);
+		 }
+		// //return sol;
 	}
 }
 function gen(){
 ex = new expression();
 arr = ex.generate(4);
 ex.express("formula", arr);
-//ex.solution(arr.slice(0,2),arr.slice(-1),"response");
-document.getElementById("response").innerHTML = arr.slice(0,3);
+ex.solution(arr.slice(0,3),arr.slice(-1),"response");
+//document.getElementById("response").innerHTML = arr.slice(-1);
 }
